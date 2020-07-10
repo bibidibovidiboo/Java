@@ -55,8 +55,6 @@ public class MovieMainForm extends JFrame implements ActionListener {
 		new MovieMainForm(); // MovieMainForm(); (x) error => 앞에 new가 없어서임
 	}
 
-
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -71,17 +69,7 @@ public class MovieMainForm extends JFrame implements ActionListener {
 		}
 		
 		
-		
 	}
 
 }
-
-
-
-
-
-
-
-
-
 

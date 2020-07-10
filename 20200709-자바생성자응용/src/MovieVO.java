@@ -15,31 +15,3 @@ public class MovieVO {
 	String director;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

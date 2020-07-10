@@ -57,8 +57,7 @@ public class MovieManager {
 			}
 			j++;
 		}
-		return m;
-		
+		return m;	
 		
 	}
 	public static void main(String[] args) {
@@ -72,13 +71,6 @@ public class MovieManager {
 			System.out.println("=====================");
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	/*
 	public static void main(String[] args) {
@@ -94,17 +86,6 @@ public class MovieManager {
 		}
 	}
 	*/
-	
-	
+		
 	
 }
-
-
-
-
-
-
-
-
-
-
