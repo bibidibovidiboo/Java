@@ -60,6 +60,29 @@ public class MovieManager {
 		return m;	
 		
 	}
+	
+	static MovieVO[] movieFindData(int page) {
+		MovieVO[] m=new MovieVO[50];
+		int i=0; // 10개씩 나눠주는 변수
+		int j=0; // for 횟수
+		int rowSize=50; // 각 페이지당 몇개
+		int pagecnt=(page*rowSize)-rowSize; // 시작 위치
+		/*
+		 * 1 page => 0 ~ 9
+		 * 2 page => 10 ~ 19
+		 */
+		for(MovieVO vo:movies) {
+			if(i>50) break;
+			if(i<50 && j>=pagecnt) {
+				m[i]=vo;
+				i++;
+			}
+			j++;
+		}
+		return m;	
+		
+	}
+	
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
 		System.out.print("페이지 입력:");
