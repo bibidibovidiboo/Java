@@ -13,6 +13,7 @@ public class MovieFind extends JPanel {
 	JTextField tf=new JTextField(); // 검색창 
 	JTable table;
 	DefaultTableModel model;
+	TableColumn column;
 	MovieFind(){
 		setLayout(null);
 		
@@ -31,6 +32,9 @@ public class MovieFind extends JPanel {
 		
 		model=new DefaultTableModel(row,col);
 		table=new JTable(model);
+		table.setRowHeight(40); // 행 높이 늘리기
+		table.getTableHeader().setReorderingAllowed(false);		
+
 		JScrollPane js=new JScrollPane(table);
 		
 		MovieVO[] movies=MovieManager.movieFindData(1);
@@ -48,6 +52,29 @@ public class MovieFind extends JPanel {
 	
 		js.setBounds(10, 120, 1260, 750);
 		add(js);
+		
+		for(int i=0;i<5;i++) {
+			// 표의 컬럼의 길이를 설정 
+			column=table.getColumnModel().getColumn(i);
+
+			if(i==0) {
+				column.setPreferredWidth(50);
+			}
+			else if(i==1) {
+				column.setPreferredWidth(250); // 영화명
+			}
+			else if(i==2) {
+				column.setPreferredWidth(220); // 감독
+			}
+			else if(i==3) {
+				column.setPreferredWidth(150); // 장르
+			}
+			else if(i==4) {
+				column.setPreferredWidth(450);
+			}
+			
+		}
+		
 
 		
 	}
