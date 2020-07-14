@@ -12,7 +12,7 @@ import javax.swing.*;
  * 
  * 	 기존 클래스 사용하는 방법
  * 		=> 포함 ==> 있는 그대로(변경없이)
- * 		=>
+ * 		=> 상속 ==> 필요한 부분을 변경해서 사용 가능(오버라이딩)
  * 
  */
 public class RecipeMainFrame extends JFrame implements ActionListener {
