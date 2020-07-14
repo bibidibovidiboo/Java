@@ -16,13 +16,16 @@
  * 			com.회사명.기능명 => com.sist.client , com.sist.server
  * 			org.조직명.기능명 => org.springframework.web.servlet.view*
  * 
- * 		    캡슐화
+ * 		   / 객체지향 특징 
+ * 
+ * 		    1) 캡슐화
  * 		 	= 변수는 private
  * 			= 메소드는 public ==> 변수 (getter/setter)
- * 		    상속
+ * 		    
+ * 			2) 상속
  * 			= extends : 기종의 클래스를 기능을 가지고 온다
  * 						단일 상속만 가능
- * 		    다형성
+ * 		    3) 다형성
  *			= 수정 , 추가 
  *
  *		  =================================== 문법사항이 아니라 권장사항 
@@ -64,6 +67,36 @@ class Calc{
 		return d+c;
 	}
 }
+/*
+ *   변수
+ *    = 멤버변수
+ *    = static 변수
+ *   
+ *   메소드
+ *    = 멤버메소드
+ *    = static 메소드
+ *    
+ *   class A
+ *   {
+ *   	int a;
+ *   	static int b;
+ *   
+ *  	 public void disp1()
+ *   	 {
+ *   		=> a, b사용 가능
+ *   		=> disp2() 호출 가능
+ *  	 }
+ *   
+ * 		 public static void disp2()
+ *  	 {
+ *  		=> b만 사용 가능
+ *  		=> disp1(), a 사용 불가
+ *     		  -----------
+ *     			사용시에는 반드시 new 사용
+ *  	 }
+ *   }
+ *      
+ */
 public class 오버로딩_중복메소드정의 {
 	int a=10;
 	static int b=20;
@@ -88,6 +121,5 @@ public class 오버로딩_중복메소드정의 {
 		오버로딩_중복메소드정의 aa=new 오버로딩_중복메소드정의();
 		System.out.println("aa="+aa);	
 		System.out.println(aa.a);
-	}
-	
+	}	
 }
