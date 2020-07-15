@@ -16,7 +16,6 @@ import com.sist.common.*;
  * 		=> 상속 ==> 필요한 부분을 변경해서 사용 가능(오버라이딩)
  * 
  */
-
 public class RecipeMainFrame extends JFrame implements ActionListener {
 	// 배치
 	CardLayout card=new CardLayout();
