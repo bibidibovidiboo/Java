@@ -2,6 +2,7 @@ package com.sist.client;
 import java.awt.*;
 import java.awt.event.*; // 버튼 처리 후 기능
 import javax.swing.*;
+import com.sist.common.*;
 /*
  * 	 자바 패키지 ==> java(JDK1.0~) => Java1 
  * 				javax(JDK1.2~) => Java2(SUN)
@@ -15,16 +16,19 @@ import javax.swing.*;
  * 		=> 상속 ==> 필요한 부분을 변경해서 사용 가능(오버라이딩)
  * 
  */
+
 public class RecipeMainFrame extends JFrame implements ActionListener {
 	// 배치
 	CardLayout card=new CardLayout();
 	Login login=new Login();
 	JoinForm join=new JoinForm();
+	RecipeManager rm=new RecipeManager();
 	public RecipeMainFrame() {
 		// GUI의 화면 디자인 , 변수 초기화 , 데이터베이스 연결 , 서버 연결  , 쓰레드 동작
 		// Layout => 화면 배치
 		setLayout(card);
 		// 화면추가
+		add("RM",rm);
 		add("LOGIN",login);
 		add("JOIN",join);
 		setSize(1024,960);
