@@ -64,8 +64,6 @@ public class MovieMainForm extends JFrame implements ActionListener,MouseListene
 				ml.movie[i][j].addMouseListener(this);
 			}
 		}
-		
-		
 
 	}
 	void moviePrint(int page) {
