@@ -47,11 +47,11 @@ public class MainClass2 extends JFrame implements ActionListener,MouseListener,I
 	public MainClass2() {
 		b1=new JButton("클릭");
 		tf=new JTextField();
-		la=new JLabel(new ImageIcon("c:\\javaDev\\air.png"));
+		la=new JLabel(new ImageIcon("c:\\javaDev\\dino.jpg"));
 		box=new JComboBox();
 		box.addItem("홍길동");
-		box.addItem("박문수");
-		box.addItem("이순신");
+		box.addItem("심봉사");
+		box.addItem("춘향이");
 		
 		add("West",b1);
 		add("Center",la);
