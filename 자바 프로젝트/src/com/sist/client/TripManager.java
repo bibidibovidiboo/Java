@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.Scanner;
 public class TripManager {
 	static TripVO[] trips=new TripVO[18];
-
 	static {
 		try
 		{	StringBuffer data=new StringBuffer();
@@ -13,7 +12,7 @@ public class TripManager {
 			int i=0;
 			while((i=fr.read())!=-1) // -1 EOD(End of File)
 			{
-				data.append(String.valueOf((char)i)); // char => String 변환
+				data.append(String.valueOf((char)i)); 
 			}
 			fr.close();
 			
@@ -23,23 +22,20 @@ public class TripManager {
 				String[] ss=s.split("\\|"); 
 				trips[k]=new TripVO(); // 메모리에 저장
 				trips[k].tno=Integer.parseInt(ss[0]);
-				// 문자열 ==> 정수로 변환 "1" ==> 1
-				trips[k].title=ss[1];
-				trips[k].genre=ss[2];
-				trips[k].poster=ss[3];
-				trips[k].actor=ss[4];
-				trips[k].regdate=ss[5];
-				trips[k].grade=ss[6];
-				trips[k].director=ss[7];
+				trips[k].place=ss[1];
+				trips[k].date=ss[2];
+				trips[k].tripimg=ss[3];
 				k++;
 			}
 			
-			// File을 읽는 경우에는 반드시 예외처리
-		}catch(Exception ex) {}
+		// File을 읽는 경우에는 반드시 예외처리
+		}catch(Exception ex) {
+			
+		}
 		
 	} 
 	
-	// 페이지 나누기 ★★
+	// 페이지 나누기 
 	static TripVO[] tripListData(int page) {
 		TripVO[] m=new TripVO[9];
 		int i=0; // 10개씩 나눠주는 변수

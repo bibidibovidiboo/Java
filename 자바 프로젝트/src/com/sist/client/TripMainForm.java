@@ -1,36 +1,40 @@
-// 여행 메인
+// 여행 메인페이지
 package com.sist.client;
 import javax.swing.*; // 윈도우 관련 클래스
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
+
+import com.sist.client2.SearchForm;
+
 import java.awt.*; // 레이아웃 (화면 배치)
 import java.awt.event.*; // 버튼 , 텍스트에 엔터 => 행위 (이벤트)
 import java.net.URL;
-
 public class TripMainForm extends JFrame implements ActionListener,MouseListener{
-	JMenuBar bar=new JMenuBar();
-	
-	// 카드 레이아웃 - 화면 바꿈
-	CardLayout card=new CardLayout(); 
-	TripList ml=new TripList();
+	// menu
+	SearchForm sb=new SearchForm();
+	TripMenu ml=new TripMenu();
+	CardLayout card=new CardLayout(); // 레이아웃 화면 바뀜
 	
 	// 페이지 초기화
 	int curpage=1;
 	int totalpage=2;
 	
 	TripMainForm(){
+		// 검색창 (SearchBar)
+		sb.setBounds(10, 10, 1465, 50);
+		add(sb);
+		
 		// 레이아웃 설정
 		setLayout(card);
 		add("ML",ml); // 리스트 먼저 출력
-		
+
 		// 윈도우 크기 설정
-		setSize(1000, 1000);
-		
-		// 윈도우 보여준다
+		setSize(1200, 900);
 		setVisible(true);
 		
 		// 이전-다음 버튼
-		ml.b1.addActionListener(this); // 이전
-		ml.b2.addActionListener(this); // 다음
+		ml.b1.addActionListener(this); 
+		ml.b2.addActionListener(this); 
 		
 		tripPrint(1);
 		for(int i=0;i<3;i++) {
@@ -40,14 +44,14 @@ public class TripMainForm extends JFrame implements ActionListener,MouseListener
 		}
 		
 	}
-	
+	// 포스터 출력
 	void tripPrint(int page) {
 		TripVO[] trips=TripManager.tripListData(page);
 		int k=0;
 		for(TripVO vo:trips) {
 			try {
 				// 포스터 읽기 => 예외처리 필요
-				URL url=new URL(vo.poster);
+				URL url=new URL(vo.tripimg);
 				Image img=getImage(new ImageIcon(url),
 								ml.trip[0][0].getWidth(),
 								ml.trip[0][0].getHeight());
@@ -58,19 +62,22 @@ public class TripMainForm extends JFrame implements ActionListener,MouseListener
 		
 	}
 
-	
 	static Image getImage(ImageIcon ii, int w, int h) {
 		Image dimg = ii.getImage().getScaledInstance(w, h, Image.SCALE_SMOOTH);	
 		return dimg;
 	}
-	
-	
+
+	// 윈도우창 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
 		new TripMainForm(); 
+		
 	}
 
+	
+	// 이전다음 마우스 효과
+	// 페이지 넘기기
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
@@ -91,8 +98,7 @@ public class TripMainForm extends JFrame implements ActionListener,MouseListener
 		
 	}
 	
-	// 메뉴 마우스 
-	
+	// 마우스 오버라이드
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub	
@@ -131,7 +137,6 @@ public class TripMainForm extends JFrame implements ActionListener,MouseListener
 			}
 		}
 		
-	} // 
+	}
 
 }
-
