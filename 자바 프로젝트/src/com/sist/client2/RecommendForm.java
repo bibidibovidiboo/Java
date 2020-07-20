@@ -15,7 +15,6 @@ public class RecommendForm extends JLabel  {
 			add(la[i]);
 		}
 	  
-		// setSize(200, 200);
 		setVisible(true);
 
 	}

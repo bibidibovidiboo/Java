@@ -15,7 +15,6 @@ public class PopularForm extends JLabel  {
 			add(la[i]);
 		}
 	  
-		setSize(700, 700);
 		setVisible(true);
 
 	}

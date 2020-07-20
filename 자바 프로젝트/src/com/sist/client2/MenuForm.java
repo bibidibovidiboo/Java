@@ -12,5 +12,6 @@ public class MenuForm extends JPanel {
 
 		add(b1);
 		add(b2);	
+		
 	}
 }
