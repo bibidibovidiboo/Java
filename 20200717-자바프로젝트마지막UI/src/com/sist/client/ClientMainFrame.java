@@ -72,7 +72,13 @@ public class ClientMainFrame extends JFrame implements ActionListener {
 		UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
 		new ClientMainFrame();
 	}
-
+	// 이미지 크기 조절 (공통 사용 메소드-static)
+	public static Image getImage(ImageIcon ii,int w,int h)
+    {
+    	Image dimg = ii.getImage().getScaledInstance(w, h,
+    	        Image.SCALE_SMOOTH);
+    	return dimg;
+    }
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
