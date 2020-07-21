@@ -39,12 +39,12 @@
  *                ===
  *                =====================         |
  *                 CheckException          RuntimeException => 생략
- *                                              |
- *                                            NumberFormatException
- *                                            ArithmeticException
- *                                            NullPointerException
- *                                            ArrayIndexOutOfBoundsException
- *                                            ClassCastException
+ *				      예외처리 반드시 ★★                                                  |
+ *                                         NumberFormatException : 숫자 형식 오류
+ *                                         ArithmeticException : 산술 연산 오류 (정수를 0으로 나누는 경우)
+ *                                         NullPointerException : null 객체를 참조했을 경우
+ *                                         ArrayIndexOutOfBoundsException : 배열을 참조하는 인덱스가 잘못된 경우
+ *                                         ClassCastException : 적절치 못하게 Class 형변환하는 경우
  */
 package com.sist.exception;
 public class MainClass4 {
