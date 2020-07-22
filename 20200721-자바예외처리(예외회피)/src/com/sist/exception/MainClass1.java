@@ -1,5 +1,5 @@
-package com.sist.exception;
 // 프로그래머가 직접 제작하지는 않지만 => 외부라이브러리
+package com.sist.exception;
 public class MainClass1 {
 	public void display() throws ArrayIndexOutOfBoundsException,ArithmeticException,
 	NumberFormatException,Exception {
