@@ -39,7 +39,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		// vf.setBounds(250, 150, 900, 500);
 		// add(vf); 
 		
-		
+	
 		// 출력 화면
 		cp.setBounds(250, 150, 900, 500);
 		add(cp);
