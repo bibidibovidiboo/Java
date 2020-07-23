@@ -12,11 +12,13 @@ public class MovieListPanel extends JPanel {
 		int i=0;
 		for(MovieVO vo:movies) {
 			try {
+				//
 				URL url=new URL(vo.getPoster());
 				poster[i]=new JLabel();
 				p.add(poster[i]);
 				Image ii=getImage(new ImageIcon(url), 105, 200);
 				poster[i].setIcon(new ImageIcon(ii));
+				//
 				i++;
 			}catch (Exception ex) {
 				System.out.println(ex.getMessage());
