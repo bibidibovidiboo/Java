@@ -1,6 +1,5 @@
-/*
- *     java.lang 
- *     =========
+/*	  < java.lang > 
+ *     ===========
  *       = Object 
  *         1) 최상위 클래스 => 모든 데이터형을 포함 
  *            class A
@@ -12,8 +11,7 @@
  *            =================== Object가 가지고 있는 모든 기능을 사용 할 수 있다
  *         3) 주요 기능(메소드) 
  *            clone() => prototype : 복제 (메모리 복제)
- *            
- *            
+ *                      
  *       = String
  *       = StringBuffer
  *       = System
@@ -45,7 +43,7 @@
  *    }
  *    
  *    
- *    상속 
+ *    / 상속 
  *      extends ====> class
  *      ======= 단일
  *      implements => interface (클래스의 일종)
