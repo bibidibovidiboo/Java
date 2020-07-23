@@ -4,7 +4,7 @@ import java.awt.*;
 import javax.swing.*;
 public class ControlPanel extends JPanel{
    CardLayout card=new CardLayout();
-   PopularForm pf=new PopularForm();
+   HomeForm pf=new HomeForm();
    RecommendForm rf=new RecommendForm();
    public ControlPanel()
    {
