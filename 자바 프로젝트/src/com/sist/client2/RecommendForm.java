@@ -1,4 +1,4 @@
-// 추천여행지 
+// 2번째 - 추천여행지 
 package com.sist.client2;
 import java.awt.*;
 import javax.swing.*;

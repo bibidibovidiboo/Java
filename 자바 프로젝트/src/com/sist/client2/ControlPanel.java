@@ -4,12 +4,14 @@ import java.awt.*;
 import javax.swing.*;
 public class ControlPanel extends JPanel{
    CardLayout card=new CardLayout();
-   HomeForm pf=new HomeForm();
+   HomeForm hf=new HomeForm();
    RecommendForm rf=new RecommendForm();
+   ReviewFromList vf = new ReviewFromList();
    public ControlPanel()
    {
 	   setLayout(card);
-	   add("PF",pf);
+	   add("HF",hf);
 	   add("RF",rf);
+	   add("VF",vf);
    }
 }

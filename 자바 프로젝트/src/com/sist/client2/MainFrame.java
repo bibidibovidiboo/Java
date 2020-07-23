@@ -10,6 +10,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	MenuForm mf=new MenuForm(); // 메뉴창
 	HomeForm hf=new HomeForm(); // 인기 여행지
 	RecommendForm rf=new RecommendForm(); // 추천 여행지
+	ReviewFromList vf=new ReviewFromList();
 	ControlPanel cp=new ControlPanel(); // 컨트롤패널
 	// 생성자
 	public MainFrame() {
@@ -34,6 +35,11 @@ public class MainFrame extends JFrame implements ActionListener {
 		rf.setBounds(250, 150, 900, 500);
 		add(rf); 
 		
+		// 여행후기 패널
+		// vf.setBounds(250, 150, 900, 500);
+		// add(vf); 
+		
+		
 		// 출력 화면
 		cp.setBounds(250, 150, 900, 500);
 		add(cp);
@@ -41,6 +47,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 		mf.b1.addActionListener(this);
 		mf.b2.addActionListener(this);
+		mf.b3.addActionListener(this);
 		
 		//  윈도우창
 		setSize(1200,800); // 크기
@@ -62,12 +69,17 @@ public class MainFrame extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource()==mf.b1)
 		{
-			cp.card.show(cp, "PF");
+			cp.card.show(cp, "HF");
 		}
 		else if(e.getSource()==mf.b2)
 		{
 			cp.card.show(cp, "RF");
 		}
+		else if(e.getSource()==mf.b3)
+		{
+			cp.card.show(cp, "VF");
+		}
+		
 	}
 	
 

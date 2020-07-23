@@ -1,4 +1,4 @@
-// 인기여행지 
+// 1번째 - 홈화면
 package com.sist.client2;
 import java.awt.*;
 import javax.swing.*;
@@ -15,8 +15,8 @@ public class HomeForm extends JPanel  {
 			add(la[i]);
 		}
 	  
-		setVisible(true);
-		setBackground(Color.black);
+		// setVisible(true);
+		// setBackground(Color.black);
 		// setSize(900,900);
 		
 	}
