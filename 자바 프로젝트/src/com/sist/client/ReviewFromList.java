@@ -14,7 +14,6 @@ public class ReviewFromList extends JPanel{
 			Review_Data[i]=new ReviewForm();
 			p.add(Review_Data[i]);
 		}
-		//p.setSize(900,500);
 		p.setBounds(0,0,900,500);
 		add(p);
 	}

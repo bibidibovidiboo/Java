@@ -24,7 +24,7 @@ public class ReviewForm extends JPanel {
 			title.setOpaque(true);
 			title.setBackground(Color.pink);
 			// setLayout(null);
-			title.setBounds(250,0,450,25);
+			title.setBounds(250,0,550,25);
 			add(title);
 			
 			//여행 종류 
@@ -32,7 +32,7 @@ public class ReviewForm extends JPanel {
 			group.setOpaque(true);
 			group.setBackground(Color.pink);
 			// setLayout(null);
-			group.setBounds(250,40,200,25);
+			group.setBounds(250,40,150,25);
 			add(group);
 			
 			//날짜
@@ -40,7 +40,7 @@ public class ReviewForm extends JPanel {
 			date.setOpaque(true);
 			date.setBackground(Color.pink);
 			// setLayout(null);
-			date.setBounds(500,40,200,25);
+			date.setBounds(650,40,150,25);
 			add(date);
 			
 			//내용
@@ -48,7 +48,7 @@ public class ReviewForm extends JPanel {
 			content.setOpaque(true);
 			content.setBackground(Color.pink);
 			// setLayout(null);
-			content.setBounds(250,80,450,50);
+			content.setBounds(250,80,550,70);
 			add(content);
 			
 			

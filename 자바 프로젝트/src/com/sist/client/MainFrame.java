@@ -28,20 +28,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		// 메뉴창
 		mf.setBounds(20, 150, 110, 300);
 		add(mf);
-		
-		// 홈패널 
-		hf.setBounds(250, 150, 900, 500);
-		add(hf); 
-		
-		// 추천여행지 패널
-		rf.setBounds(250, 150, 900, 500);
-		add(rf); 
-		
-		// 여행후기 패널
-		// vf.setBounds(250, 150, 900, 500);
-		// add(vf); 
-		
-	
+
 		// 출력 화면
 		cp.setBounds(250, 150, 900, 500);
 		add(cp);
@@ -84,5 +71,4 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 	}
 	
-
 }

@@ -1,4 +1,4 @@
-// 검색창
+// 검색창 (미정)
 package com.sist.client;
 import java.awt.Color;
 import javax.swing.*;
