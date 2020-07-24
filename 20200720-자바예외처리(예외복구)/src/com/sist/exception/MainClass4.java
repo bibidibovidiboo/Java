@@ -46,7 +46,7 @@
  *                                         ArrayIndexOutOfBoundsException : 배열을 참조하는 인덱스가 잘못된 경우
  *                                         ClassCastException : 적절치 못하게 Class 형변환하는 경우
  */
-package com.sist.exception2;
+package com.sist.exception;
 public class MainClass4 {
 	public static void main(String[] args) {
 		try {

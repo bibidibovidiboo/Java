@@ -94,7 +94,7 @@
  *                   }catch(Exception e){} ==> i++ 이동
  *                }    
  */
-package com.sist.exception2;
+package com.sist.exception;
 public class MainClass {
 	public static void main(String[] args) {
 		// 밑에 에러를 예외처리한 예제
