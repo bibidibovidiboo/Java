@@ -1,5 +1,5 @@
 // < 부분 처리  > 
-package com.sist.exception;
+package com.sist.exception2;
 public class MainClass3 {
 	public static void main(String[] args) {
 		// 부분적으로 try를 사용할 수 있다 ★★
