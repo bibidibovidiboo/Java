@@ -1,15 +1,15 @@
-/*	< ìë°” ê¸°ë³¸  >
- *   ì£¼ì„ ì²˜ë¦¬ => í”„ë¡œê·¸ë¨ì„ ì‹¤í–‰í•˜ì§€ ì•ŠëŠ”ë‹¤ 
- *   ì—¬ëŸ¬ì¤„ ì£¼ì„ 
- *   // í•œì¤„ ì£¼ì„ 
- *   CTRL + SHIFT + / => ì£¼ì„
- *   CTRL + SHIFT + \ => ì£¼ì„í•´ì œ   
+/*	< ÀÚ¹Ù ±âº»  >
+ *   ÁÖ¼® Ã³¸® => ÇÁ·Î±×·¥À» ½ÇÇàÇÏÁö ¾Ê´Â´Ù 
+ *   ¿©·¯ÁÙ ÁÖ¼® 
+ *   // ÇÑÁÙ ÁÖ¼® 
+ *   CTRL + SHIFT + / => ÁÖ¼®
+ *   CTRL + SHIFT + \ => ÁÖ¼®ÇØÁ¦   
  */
 public class MainClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		// ë„ìŠ¤ì°½ì— ì¶œë ¥í•  ë•Œ ì‚¬ìš© 
+		// µµ½ºÃ¢¿¡ Ãâ·ÂÇÒ ¶§ »ç¿ë 
 		  System.out.println("Hello Java"); 
 		  System.out.println("Hello Java");
 		  System.out.println("Hello Java"); 
@@ -17,4 +17,3 @@ public class MainClass {
 		  System.out.println("Hello Java");
 	}
 }
-// test ë©”ì„¸
