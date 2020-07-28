@@ -52,7 +52,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		new MainFrame();
 	}
 	
-	// 버튼 눌렀을 때 이동
+	// 버튼 눌렀을 때 이동한다
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
