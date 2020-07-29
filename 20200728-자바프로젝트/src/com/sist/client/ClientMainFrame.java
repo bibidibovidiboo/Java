@@ -36,7 +36,7 @@ import java.awt.*; // Color , Layout
 import java.awt.event.*; // interface
 
 public class ClientMainFrame extends JFrame implements ActionListener,MouseListener {
-	JLabel title=new JLabel("영화예매 & 추천 프로그램",JLabel.CENTER); // 가운데정렬
+	JLabel title=new JLabel("영화 예매 & 추천 프로그램",JLabel.CENTER); // 가운데정렬
 	MenuForm mf=new MenuForm();
 	ChatForm cf=new ChatForm();
 	ControlPanel cp;
@@ -71,22 +71,36 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		
 		mf.b1.addActionListener(this);
 		mf.b2.addActionListener(this);
+		mf.b5.addActionListener(this); // mf = 메뉴
 		
 		// 이전다음버튼
 		cp.ff.b1.addActionListener(this); // 이전
 		cp.ff.b2.addActionListener(this); // 다음
-		
+
 		cp.df.b2.addActionListener(this); // 목록
 		
+		// 영화 찾기 
+		cp.lf.b1.addActionListener(this);
+		cp.lf.b2.addActionListener(this);
+		cp.lf.b3.addActionListener(this);
+		cp.lf.b4.addActionListener(this);
+		cp.lf.b5.addActionListener(this);
+		cp.lf.b6.addActionListener(this);
+		cp.lf.tf.addActionListener(this);
+		
+		
+		
+		/*
 		for(int i=0;i<10;i++) {
 			cp.ff.mc[i].addMouseListener(this);
 			// mc => 영화하나 
 		}
+		*/
 	}
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		UIManager.setLookAndFeel("com.jtattoo.plaf.mcwin.McWinLookAndFeel");
+		UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
 		new ClientMainFrame();
 	}
 	// 이미지 크기 조절 (공통 사용 메소드-static)
@@ -106,6 +120,9 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		}
 		else if(e.getSource()==mf.b2) {
 			cp.card.show(cp, "LF");
+		}
+		else if(e.getSource()==mf.b5) {
+			cp.card.show(cp, "NF");
 		}
 		else if(e.getSource()==cp.df.b2) {
 			cp.card.show(cp, "FF"); // 목록 누르면 내가 보던 페이지로 넘어감
@@ -132,6 +149,34 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 				cp.ff.repaint();
 				cp.ff.p.validate();
 			}
+		}
+		//  영화 찾기
+		else if(e.getSource()==cp.lf.b1) {
+			cp.lf.movieAllDate(1);
+		}
+		else if(e.getSource()==cp.lf.b2) {
+			cp.lf.movieAllDate(2);
+		}
+		else if(e.getSource()==cp.lf.b3) {
+			cp.lf.movieAllDate(3);
+		}
+		else if(e.getSource()==cp.lf.b4) {
+			cp.lf.movieAllDate(4);
+		}
+		else if(e.getSource()==cp.lf.b5) {
+			cp.lf.movieAllDate(5);
+		}
+		// 검색버튼 누르기 or 엔터쳤을 때 둘다 동작 ↓ => 처리하는 내용이 같을때 동시에 가능 
+		else if(e.getSource()==cp.lf.b6 || e.getSource()==cp.lf.tf) {
+			// 1. 입력된 값 읽기
+			String ss=cp.lf.tf.getText(); // list폼안에 tf 값 가져와라
+			if(ss.length()<1) {
+				JOptionPane.showMessageDialog(this, "검색어를 입력하세요"); // this => ClientMainFrame
+				cp.lf.tf.requestFocus(); // 커서
+				return; //  메소드 종료
+				
+			}
+			cp.lf.movieFindDate(ss);
 		}
 	}
 

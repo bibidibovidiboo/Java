@@ -5,13 +5,15 @@ import javax.swing.*;
 public class ControlPanel extends JPanel{
    CardLayout card=new CardLayout();
    HomeForm hf=new HomeForm();
-   RecommendForm rf=new RecommendForm();
-   ReviewFromList vf = new ReviewFromList();
+   BookForm bf=new BookForm();
+   FoodForm vf=new FoodForm();
+   MusicForm sf=new MusicForm();
    public ControlPanel()
    {
 	   setLayout(card);
 	   add("HF",hf);
-	   add("RF",rf);
+	   add("BF",bf);
 	   add("VF",vf);
+	   add("SF",sf);
    }
 }

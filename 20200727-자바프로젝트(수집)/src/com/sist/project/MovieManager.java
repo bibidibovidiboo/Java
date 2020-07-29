@@ -57,7 +57,11 @@ public class MovieManager {
 	    	    	//System.out.println(link.get(j).attr("href")); => 각 영화주소
 	    	    	// 상세보기 
 	    	    	try {
-		    	    	String url="https://movie.daum.net"+link.get(j).attr("href");
+		    	    	String url="https://m"
+		    	    			+ ""
+		    	    			+ ""
+		    	    			+ ""
+		    	    			+ "ovie.daum.net"+link.get(j).attr("href");
 		    	    	Document doc2=Jsoup.connect(url).get();
 		    	    	
 		    	    	Element poster=doc2.selectFirst("span.thumb_img img");
@@ -128,7 +132,7 @@ public class MovieManager {
     		    Elements content=doc.select("a.desc_line");
     		    Elements author=doc.select("span.state_line");
     		    Elements link=doc.select("strong.tit_line a.link_txt");
-    		    // 시크릿 가든’은 1911년 출간된 이래 단 한번도
+    		    // 시크릿 가든은 1911년 출간된 이래 단 한번도
     		    
     		    for(int j=0;j<title.size();j++)
     		    {
@@ -137,6 +141,18 @@ public class MovieManager {
     		    	System.out.println(content.get(j).text());
     		    	System.out.println(author.get(j).text());
     		    	System.out.println(link.get(j).attr("href"));
+    		    	
+    		    	FileWriter fw=new FileWriter("c:\\javaDev\\daum_news.txt",true); // 저장코드
+    		    	String img=poster.get(j).attr("style");
+    		    	img=img.substring(img.indexOf("(")+1,img.lastIndexOf(")")); // +1 줘야 다음부터 잘라옴
+    		    	String data=title.get(j).text()+"|"
+    		    			+content.get(j).text().replace("|", " ")+"|" // replace => |를 공백으로 로 바꿔라 
+    		    			+link.get(j).attr("href")+"|"
+    		    			+"https:"+img+"\r\n";
+    		    			// 소스 앞에 https: 가 생략되어 있어서 추가해줬음 
+    		    	fw.write(data);
+    		    	fw.close();
+    		    	
     		    }
     		}
     	}catch(Exception ex) {System.out.println(ex.getMessage());}
@@ -145,8 +161,8 @@ public class MovieManager {
 		// TODO Auto-generated method stub
         // 객체 생성 
 		MovieManager m=new MovieManager();
-		//m.movieAllData();
-		m.daumNewsData();
+		m.movieAllData();
+		//m.daumNewsData();
 	}
 
 }

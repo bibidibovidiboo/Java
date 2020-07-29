@@ -1,4 +1,4 @@
-// 메뉴바
+// 메뉴
 package com.sist.client;
 import java.awt.*;
 import javax.swing.*;
@@ -7,11 +7,11 @@ public class MenuForm extends JPanel {
 	// 버튼 초기화
 	public MenuForm() {
 		b1=new JButton("홈");
-		b2=new JButton("추천여행지");
-		b3=new JButton("여행후기");
-		b4=new JButton("여행예약");
-		b5=new JButton("채팅방");
-		b6=new JButton("마이페이지");
+		b2=new JButton("도서추천");
+		b3=new JButton("맛집추천");
+		b4=new JButton("음악추천");
+		b5=new JButton("영화예약");
+		b6=new JButton("종료");
 		setLayout(new GridLayout(6, 1, 8, 8)); 
 		add(b1);
 		add(b2);

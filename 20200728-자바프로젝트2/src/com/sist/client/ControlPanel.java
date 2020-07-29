@@ -8,7 +8,8 @@ public class ControlPanel extends JPanel {
 	MovieForm ff;
 	ClientMainFrame c;
 	NewsForm nf=new NewsForm();
-	public ControlPanel(ClientMainFrame c) {
+	public ControlPanel(ClientMainFrame c)
+	{
 		this.c=c;
 		ff=new MovieForm(c);
 		setLayout(card);
@@ -17,14 +18,5 @@ public class ControlPanel extends JPanel {
 		add("NF",nf);//newsform
 		add("LF",lf);
 		
-		/*
-		½Ü²¨
-		this.c=c;
-		ff=new MovieForm(c);
-		setLayout(card);
-		add("FF",ff);
-		//add("DF",df);
-		add("LF",lf);
-		*/
 	}
 }
