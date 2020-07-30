@@ -61,9 +61,9 @@ public class MusicManager {
     	    	
 		    	    	String msg=mno+"|"+cno+"|"+title.text()+"|"
 		    	    			  +cover.attr("src")+"|"+artist.text()+"|"
-		    	    			  +"|"+kinds.text()+"|"+release.text()
-		    	    			  +"|"+genre.text()+"|"+company.text()
-		    	    			  +"|"+distributor.text()+"|"+ time.text()
+		    	    			  +kinds.text()+"|"+release.text()+"|"
+		    	    			  +genre.text()+"|"+company.text()+"|"
+		    	    			  +distributor.text()+"|"+ time.text()
 		    	    			  +"\r\n";
 		    	    	
 		    	    	// 파일에 저장 
