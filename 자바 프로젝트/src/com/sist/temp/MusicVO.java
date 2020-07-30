@@ -1,4 +1,4 @@
-// ¹÷½º¹ÂÁ÷
+// ¹÷½º¹ÂÁ÷ VO
 package com.sist.temp;
 public class MusicVO {
     private int mno; // ¹øÈ£
