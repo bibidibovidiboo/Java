@@ -68,6 +68,7 @@ public class MovieManager {
 	
 	}
 	
+	// 홈 - 10개씩 출력
 	public ArrayList<MovieVO> movieListData(int page){
 		ArrayList<MovieVO> movies=new ArrayList<MovieVO>();
 		int i=0;

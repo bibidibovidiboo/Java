@@ -1,13 +1,15 @@
 // 메인페이지
-package com.sist.client;
+package com.sist.test;
 import javax.swing.*;
-import com.sist.client.ControlPanel;
-import java.awt.*; 
-import java.awt.event.*; 
-public class MainFrame extends JFrame implements ActionListener {
+
+import com.sist.test.ControlPanel;
+
+import java.awt.*; // Color , Layout
+import java.awt.event.*; // interface
+public class ClientMainFrame extends JFrame implements ActionListener {
 	JLabel title=new JLabel("영화 예매 & 추천 프로그램",JLabel.CENTER); 
 	MenuForm mf=new MenuForm(); // 메뉴
-	HomeForm hf=new HomeForm(); // 홈
+	MovieForm hf=new MovieForm(); // 홈
 	BookForm bf=new BookForm(); // 도서추천
 	FoodForm vf=new FoodForm(); // 맛집추천
 	ChatForm cf=new ChatForm(); // 채팅
@@ -15,7 +17,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	ControlPanel cp=new ControlPanel(); // 컨트롤패널
 	
 	// 생성자
-	public MainFrame() {
+	public ClientMainFrame() {
 		setLayout(null); // 사용자 정의로 배치 
 		
 		// 타이틀
@@ -51,7 +53,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		UIManager.setLookAndFeel("com.jtattoo.plaf.hifi.HiFiLookAndFeel");
-		new MainFrame();
+		new ClientMainFrame();
 	}
 	
 	

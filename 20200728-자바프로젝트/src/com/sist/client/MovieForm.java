@@ -1,4 +1,3 @@
-// ÇªµåÄ«Å×°í¸® »Ñ¸± °÷ 
 package com.sist.client;
 import java.awt.*;
 import java.util.*;

@@ -1,4 +1,4 @@
-package com.sist.client;
+package com.sist.test;
 import java.awt.Color;
 // 1465, 200
 import javax.swing.*;

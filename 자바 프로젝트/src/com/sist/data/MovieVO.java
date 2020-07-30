@@ -1,7 +1,7 @@
 package com.sist.data;
 public class MovieVO {
-    private int mno; // 영화번호
-    private int cno; // 카테고리
+    private int mno; 
+    private int cno; 
     private String title;
     private String poster;
     private String director;
@@ -9,9 +9,10 @@ public class MovieVO {
     private String genre;
     private String grade;
     private String regdate;
-    private double score;
+    private String score;
     private int showUser;
     private String story;
+    
 	public int getMno() {
 		return mno;
 	}
@@ -66,10 +67,10 @@ public class MovieVO {
 	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
-	public double getScore() {
+	public String getScore() {
 		return score;
 	}
-	public void setScore(double score) {
+	public void setScore(String score) {
 		this.score = score;
 	}
 	public int getShowUser() {
@@ -83,6 +84,5 @@ public class MovieVO {
 	}
 	public void setStory(String story) {
 		this.story = story;
-	}
-  
+	} 
 }

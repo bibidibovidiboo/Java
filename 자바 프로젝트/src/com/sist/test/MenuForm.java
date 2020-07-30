@@ -1,5 +1,5 @@
 // ¸Þ´º
-package com.sist.client;
+package com.sist.test;
 import java.awt.*;
 import javax.swing.*;
 public class MenuForm extends JPanel {

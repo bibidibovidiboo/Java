@@ -1,5 +1,5 @@
 // 도서추천 - 혜영
-package com.sist.client;
+package com.sist.test;
 import java.awt.*;
 import javax.swing.*;
 public class BookForm extends JPanel  {

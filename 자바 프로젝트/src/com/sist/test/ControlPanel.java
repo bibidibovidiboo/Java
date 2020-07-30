@@ -1,10 +1,10 @@
 // 컨트롤 패널
-package com.sist.client;
+package com.sist.test;
 import java.awt.*;
 import javax.swing.*;
 public class ControlPanel extends JPanel{
    CardLayout card=new CardLayout();
-   HomeForm hf=new HomeForm();
+   MovieForm hf=new MovieForm();
    BookForm bf=new BookForm();
    FoodForm vf=new FoodForm();
    MusicForm sf=new MusicForm();

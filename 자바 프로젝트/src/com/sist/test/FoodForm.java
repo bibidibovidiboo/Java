@@ -1,5 +1,5 @@
 // 맛집추천 - 정화
-package com.sist.client;
+package com.sist.test;
 import java.awt.*;
 import javax.swing.*;
 public class FoodForm extends JPanel{
