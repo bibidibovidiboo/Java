@@ -4,7 +4,7 @@ import java.io.*;
 public class MovieManager {
 	// 데이터저장
 	private static ArrayList<MovieVO> list=new ArrayList<MovieVO>();
-
+	// 홈화면 포스터 
 	static {
 		try {
 			// 저장된 파일 읽기
@@ -52,12 +52,6 @@ public class MovieManager {
 		int i=0;
 		int j=0;
 		int pagecnt=(page*10)-10;
-		// pagecnt => 저장 위치 
-		/*
-		 * 	1page => 0~9
-		 * 	2page => 10~19
-		 * 	3page => 20~29
-		 */
 		for(MovieVO vo:list) {
 			if(i<10 && j>=pagecnt) {
 				movies.add(vo);
@@ -70,8 +64,9 @@ public class MovieManager {
 	}
 	public int movieTotalPage() {
 		return (int)(Math.ceil(list.size()/10.0)); 
-		// ceil는 올림 메소드
+		
 	}
+	
 	// 상세보기
 	public MovieVO movieDetailDate(int mno) {
 		return list.get(mno-1); // 값 넘김
@@ -88,28 +83,24 @@ public class MovieManager {
 		return movies;
 	}
 	
-	// static이 아닌 인스턴스라 ListForm 안에 
-	// MovieManager m=new MovieManager(); 로 생성해야 쓸 수 있다 ★
 	
 	// 검색
-	// return => 여러개를 모아서 보내주겠다 
 	public ArrayList<MovieVO> movieFindDate(String ss){
-		ArrayList<MovieVO> movies=new ArrayList<MovieVO>(); // 가변배열
+		ArrayList<MovieVO> movies=new ArrayList<MovieVO>(); 
 		// list 
 		for(MovieVO vo:list) {
-			// 타이틀(getTitle).포함한(contains(영화번호))
+			// 타이틀(getTitle).(contains(영화번호))
 			if(vo.getTitle().contains(ss)) {
-				movies.add(vo); // ss에 포함됐다면 vo에 추가해줘
+				movies.add(vo); // ss에 포함됐다면 vo에 추가
 			}
 		}
 		
-		return movies;
+		return movies; // 여러개를 모아서 보내줌
 	}
 	
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
 		System.out.print("페이지:");
-		// String ss=scan.next();
 		int page=scan.nextInt();
 		
 		MovieManager m=new MovieManager();
@@ -121,13 +112,6 @@ public class MovieManager {
 		for(MovieVO vo:list) {
 			System.out.println(vo.getTitle());
 		}
-		
-		/*
-		for(MovieVO vo:list) {
-			if(vo.getTitle().contains(ss)) {
-				System.out.println(vo.getTitle());
-			}
-		}
-		*/
+			
 	}
 }

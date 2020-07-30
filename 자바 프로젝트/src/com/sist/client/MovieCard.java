@@ -5,7 +5,7 @@ import java.net.URL;
 public class MovieCard extends JPanel {
 	String title,poster;
 	Image img;
-	public MovieCard(String title,String poster) { // 제목 & 포스터
+	public MovieCard(String title,String poster) { 
 		this.title=title;
 		this.poster=poster;
 		try {
@@ -16,6 +16,5 @@ public class MovieCard extends JPanel {
 		public void paint(Graphics g) {
 			g.drawImage(img, 0, 0, getWidth(),getHeight(), this);
 			
-		}	
-	
+		}		
 }

@@ -1,3 +1,4 @@
+// Ã¤ÆÃ
 package com.sist.client;
 import java.awt.Color;
 // 1465, 200
@@ -12,7 +13,7 @@ public class ChatForm extends JPanel {
 	JButton b1,b2;
 	public ChatForm()
 	{
-		// setBackground(Color.orange);
+		
 		setLayout(null);
 		ta=new JTextArea();
 		JScrollPane js=new JScrollPane(ta);
