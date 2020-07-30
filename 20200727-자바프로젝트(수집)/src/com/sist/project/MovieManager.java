@@ -43,25 +43,23 @@ public class MovieManager {
 	    	// HTML (브라우저에서 실행되는 언어) 
 	    	// 태그 <> , 속성 
 	    	// 화면 UI => 구분  => id(중복이 없다),class(중복이될때)
-	    	int mno=107;
-	    	int cno=5;
 	    	
-	    	//for(int i=4;i<=6;i++)
+	    	int mno=107; // 영화넘버
+	    	int cno=5; // 카테고리 넘버
+	    	
+	    	// for(int i=1;i<=3;i++) => 페이지 for문
 	    	{
 	    		// 사이트 연결해서 데이터를 한번에 읽기 => 메모리 저장 => Document
+	    		// 페이지 여러개 => Document doc=Jsoup.connect("https://movie.daum.net/premovie/released?reservationOnly=N&sort=reservation&page="+i).get();
 	    		Document doc=Jsoup.connect("https://movie.daum.net/boxoffice/yearly").get();
-	    	    Elements link=doc.select("a.name_movie");// css
+	    	    Elements link=doc.select("a.name_movie"); // css
 	    	    for(int j=0;j<link.size();j++)
 	    	    {
 	    	    	// class Elements extends ArrayList
 	    	    	//System.out.println(link.get(j).attr("href")); => 각 영화주소
 	    	    	// 상세보기 
 	    	    	try {
-		    	    	String url="https://m"
-		    	    			+ ""
-		    	    			+ ""
-		    	    			+ ""
-		    	    			+ "ovie.daum.net"+link.get(j).attr("href");
+	    	    		String url="https://movie.daum.net"+link.get(j).attr("href");
 		    	    	Document doc2=Jsoup.connect(url).get();
 		    	    	
 		    	    	Element poster=doc2.selectFirst("span.thumb_img img");
@@ -102,7 +100,7 @@ public class MovieManager {
 		    	    			  +"|"+story.text()+"\r\n";
 		    	    	
 		    	    	// 파일에 저장 
-		    	    	FileWriter fw=new FileWriter("c:\\javaDev\\daum_movie.txt",true);
+		    	    	FileWriter fw=new FileWriter("c:\\javaDev\\daum_movie1.txt",true);
 		    	    	fw.write(msg);
 		    	    	fw.close();
 		    	    	
@@ -142,7 +140,7 @@ public class MovieManager {
     		    	System.out.println(author.get(j).text());
     		    	System.out.println(link.get(j).attr("href"));
     		    	
-    		    	FileWriter fw=new FileWriter("c:\\javaDev\\daum_news.txt",true); // 저장코드
+    		    	FileWriter fw=new FileWriter("c:\\javaDev\\daum_news1.txt",true); // 저장코드
     		    	String img=poster.get(j).attr("style");
     		    	img=img.substring(img.indexOf("(")+1,img.lastIndexOf(")")); // +1 줘야 다음부터 잘라옴
     		    	String data=title.get(j).text()+"|"
