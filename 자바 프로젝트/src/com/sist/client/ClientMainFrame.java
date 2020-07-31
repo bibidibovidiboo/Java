@@ -10,7 +10,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 	ControlPanel cp; // 컨트롤패널
 	
 	int curpage=1; // 첫페이지
-	int totalpage=10; // 마지막페이지
+	int totalpage=16; // 마지막페이지
 
 	//  윈도우 창 띄우기
 	public ClientMainFrame() {

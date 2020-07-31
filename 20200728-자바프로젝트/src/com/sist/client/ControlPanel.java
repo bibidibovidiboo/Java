@@ -12,19 +12,10 @@ public class ControlPanel extends JPanel {
 		this.c=c;
 		ff=new MovieForm(c);
 		setLayout(card);
-		add("FF",ff);//movieform
-		add("DF",df);//detailform
-		add("NF",nf);//newsform
+		add("FF",ff); // movieform
+		add("DF",df); // detailform
+		add("NF",nf); // newsform
 		add("LF",lf);
 		
-		/*
-		½Ü²¨
-		this.c=c;
-		ff=new MovieForm(c);
-		setLayout(card);
-		add("FF",ff);
-		//add("DF",df);
-		add("LF",lf);
-		*/
 	}
 }
