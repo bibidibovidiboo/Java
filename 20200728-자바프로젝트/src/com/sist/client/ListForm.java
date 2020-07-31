@@ -1,4 +1,4 @@
-// Áö´Ï¹ÂÁ÷
+// ÅÇ ³ª´©±â
 package com.sist.client;
 import java.awt.Color;
 import java.awt.Image;
