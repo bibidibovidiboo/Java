@@ -2,10 +2,10 @@ package com.sist.client;
 import java.awt.*;
 import javax.swing.*;
 import java.net.URL;
-public class MovieCard extends JPanel {
+public class MusicalCard extends JPanel {
 	String title,poster;
 	Image img;
-	public MovieCard(String title,String poster) { 
+	public MusicalCard(String title,String poster) { 
 		this.title=title;
 		this.poster=poster;
 		try {

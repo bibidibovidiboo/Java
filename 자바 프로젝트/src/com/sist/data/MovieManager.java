@@ -13,7 +13,8 @@ public class MovieManager {
 			BufferedReader in=new BufferedReader(new InputStreamReader(fr));
 			while(true) {
 				String  movie=in.readLine(); // readLine() => \n 한줄씩
-				if(movie==null) break; // 종료 => 파일을 다 읽은 경우
+				if(movie==null) break; // 파일을 다 읽은 경우 종료
+				
 				StringTokenizer st=new StringTokenizer(movie,"|");
 				while(st.hasMoreTokens()) {
 					MovieVO vo=new MovieVO();
@@ -35,15 +36,10 @@ public class MovieManager {
 					vo.setGrade(grade.trim());
 					vo.setShowUser(Integer.parseInt(st.nextToken().replace(",", "")));
 					vo.setStory(st.nextToken());
-					list.add(vo);
-					
+					list.add(vo);	
 				}
-			}
-			
-		}catch (Exception ex) {
-			System.out.println(ex.getMessage());
-		}
-	
+			}			
+		}catch (Exception ex) {}	
 	}
 	
 	// 홈 - 10개씩 출력
@@ -59,59 +55,12 @@ public class MovieManager {
 			}
 			j++; // for 돌아가는 횟수
 		}
-		return movies;
-		
+		return movies;	
 	}
-	public int movieTotalPage() {
-		return (int)(Math.ceil(list.size()/10.0)); 
-		
-	}
-	
+
 	// 상세보기
 	public MovieVO movieDetailDate(int mno) {
 		return list.get(mno-1); // 값 넘김
 	}
-	
-	// 영화 전체 읽기 
-	public ArrayList<MovieVO> movieAllData(int cno){
-		ArrayList<MovieVO> movies=new ArrayList<MovieVO>();
-		for(MovieVO vo:list) {
-			if(vo.getCno()==cno) {
-				movies.add(vo);
-			}
-		}
-		return movies;
-	}
-	
-	
-	// 검색
-	public ArrayList<MovieVO> movieFindDate(String ss){
-		ArrayList<MovieVO> movies=new ArrayList<MovieVO>(); 
-		// list 
-		for(MovieVO vo:list) {
-			// 타이틀(getTitle).(contains(영화번호))
-			if(vo.getTitle().contains(ss)) {
-				movies.add(vo); // ss에 포함됐다면 vo에 추가
-			}
-		}
-		
-		return movies; // 여러개를 모아서 보내줌
-	}
-	
-	public static void main(String[] args) {
-		Scanner scan=new Scanner(System.in);
-		System.out.print("페이지:");
-		int page=scan.nextInt();
-		
-		MovieManager m=new MovieManager();
-		System.out.println(page+"page / "+m.movieTotalPage()+" pages" );
-		
-		// 데이터 읽기
-		ArrayList<MovieVO> list=m.movieListData(page);
-		
-		for(MovieVO vo:list) {
-			System.out.println(vo.getTitle());
-		}
-			
-	}
+
 }

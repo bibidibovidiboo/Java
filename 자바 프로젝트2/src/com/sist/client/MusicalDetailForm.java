@@ -1,17 +1,24 @@
-// 영화 상세페이지
 package com.sist.client;
-import javax.swing.*;
-import java.awt.*;
-import java.net.*;
-import com.sist.data.MovieManager;
-import com.sist.data.MovieVO;
-public class MovieDetailForm extends JPanel {
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Image;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
+import com.sist.data.MusicalManager;
+import com.sist.data.MusicalVO;
+public class MusicalDetailForm extends JPanel {
 	JLabel poster=new JLabel();
 	JLabel la1=new JLabel();
-	JLabel[] la=new JLabel[7];
+	JLabel[] la=new JLabel[6];
 	JTextPane ta=new JTextPane(); 
 	JButton b1;
-	public MovieDetailForm() {
+	public MusicalDetailForm() {
 		setLayout(null);
 		
 		poster.setBounds(800, 40, 350, 400);
@@ -22,10 +29,10 @@ public class MovieDetailForm extends JPanel {
 		add(la1);
 		
 		JPanel p=new JPanel();
-		p.setLayout(new GridLayout(7,1,5,5)); // 똑같은 모양이면 그리드 레이아웃
-		for(int i=0;i<7;i++) {
+		p.setLayout(new GridLayout(6,1,5,5)); // 똑같은 모양이면 그리드 레이아웃
+		for(int i=0;i<6;i++) {
 			String[] str= {
-					"감독","출연","장르","등급","개봉일","평점","누적"};
+					"감독","출연","장르","등급","개봉일","평점"};
 			la[i]=new JLabel(str[i]);
 			la[i].setFont(new Font("맑은 고딕",Font.PLAIN,23)); // 안에 내용 글자크기
 			p.add(la[i]);
@@ -44,9 +51,9 @@ public class MovieDetailForm extends JPanel {
 		add(b1);
 
 	}
-	public void datailPrint(int mno) {
-		MovieManager m=new MovieManager();
-		MovieVO vo=m.movieDetailDate(mno);
+	public void MusicaldatailPrint(int mno) {
+		MusicalManager m=new MusicalManager();
+		MusicalVO vo=m.MusicalDetailDate(mno);
 		la1.setText(vo.getTitle()); // 타이틀출력
 		try{
 			URL url=new URL(vo.getPoster()); // url 읽기
@@ -57,14 +64,13 @@ public class MovieDetailForm extends JPanel {
 			
 		}
 		
-		la[0].setText("감독 / "+vo.getDirector());
-		la[1].setText("출연 / "+vo.getActor());
-		la[2].setText("장르 / "+vo.getGenre());
-		la[3].setText("등급 / "+vo.getGrade());
-		la[4].setText("개봉 / "+vo.getRegdate());
-		la[5].setText("평점 / "+vo.getScore());
-		la[6].setText("누적 / "+vo.getShowUser());
-		ta.setText(vo.getStory());
+		la[0].setText("장르 / "+vo.getInfo());
+		la[1].setText("시간 / "+vo.getInfo());
+		la[2].setText("등급 / "+vo.getInfo());
+		la[3].setText("장소 / "+vo.getPlace());
+		la[4].setText("기간 / "+vo.getPeriod());
+		la[5].setText("출연 / "+vo.getActor());
+		ta.setText(vo.getTime());
 		
 	}
 }
