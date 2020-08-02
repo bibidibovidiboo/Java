@@ -4,17 +4,17 @@ import java.awt.*;
 import javax.swing.*;
 public class ControlPanel extends JPanel {
 	CardLayout card=new CardLayout();
-	MusicalDetailForm df=new MusicalDetailForm(); // 상세보기
+	MovieDetailForm df=new MovieDetailForm(); // 상세보기
 	BookForm bf=new BookForm(); // 도서
 	FoodForm of=new FoodForm(); // 맛집
 	MusicForm sf=new MusicForm(); // 음악
 	NewsForm nf=new NewsForm(); // 뉴스
-	MusicalForm ff; // 홈화면
+	MovieForm ff; // 홈화면
 	ClientMainFrame c; // 메인
 
 	public ControlPanel(ClientMainFrame c) {
 		this.c=c;
-		ff=new MusicalForm(c);
+		ff=new MovieForm(c);
 		setLayout(card);
 		
 		add("FF",ff); // 홈

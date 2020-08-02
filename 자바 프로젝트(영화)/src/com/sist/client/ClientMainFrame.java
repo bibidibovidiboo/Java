@@ -90,7 +90,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			if(curpage>1) {
 				curpage--;
 				cp.ff.p.removeAll(); // JPanel의 모든 기능을 삭제
-				cp.ff.MusicalPrint(curpage);
+				cp.ff.moviePrint(curpage);
 				cp.ff.repaint(); // paint 다시 호출
 				cp.ff.p.validate(); // JPanel의 원래 기능을 재배치
 			}		
@@ -101,7 +101,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			if(curpage<totalpage) {
 				curpage++;
 				cp.ff.p.removeAll();
-				cp.ff.MusicalPrint(curpage);
+				cp.ff.moviePrint(curpage);
 				cp.ff.repaint();
 				cp.ff.p.validate();
 			}
@@ -115,7 +115,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			if(e.getSource()==cp.ff.mc[i]) {
 				if(e.getClickCount()==2) { 
 					int a=(i+1)+((curpage*10)-10);				
-					cp.df.MusicaldatailPrint(a);
+					cp.df.datailPrint(a);
 					cp.card.show(cp,"DF"); 
 					break;
 				}

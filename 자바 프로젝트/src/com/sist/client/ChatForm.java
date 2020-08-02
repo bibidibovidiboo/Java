@@ -35,7 +35,6 @@ public class ChatForm extends JPanel {
 		box.setBounds(695, 160, 105, 29);
 		add(box);
 		
-		
 		String[] col= {"ID","대화명","성별"};
 		String[][] row=new String[0][3];
 		model=new DefaultTableModel(row, col);

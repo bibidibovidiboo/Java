@@ -10,14 +10,14 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 	ControlPanel cp; // 컨트롤패널
 	
 	int curpage=1; // 첫페이지
-	int totalpage=16; // 마지막페이지
+	int totalpage=9; // 마지막페이지
 
 	//  윈도우 창 띄우기
 	public ClientMainFrame() {
 		cp=new ControlPanel(this); // 현재 떠있는 창으로 이동
 		// 타이틀
 		title.setFont(new Font("맑은 고딕", Font.BOLD, 50));
-		title.setBounds(10, 8, 1400, 100);
+		title.setBounds(10, 7, 1400, 100);
 		setLayout(null); 
 		add(title);
 		
@@ -90,7 +90,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			if(curpage>1) {
 				curpage--;
 				cp.ff.p.removeAll(); // JPanel의 모든 기능을 삭제
-				cp.ff.moviePrint(curpage);
+				cp.ff.musicalPrint(curpage);
 				cp.ff.repaint(); // paint 다시 호출
 				cp.ff.p.validate(); // JPanel의 원래 기능을 재배치
 			}		
@@ -101,7 +101,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			if(curpage<totalpage) {
 				curpage++;
 				cp.ff.p.removeAll();
-				cp.ff.moviePrint(curpage);
+				cp.ff.musicalPrint(curpage);
 				cp.ff.repaint();
 				cp.ff.p.validate();
 			}

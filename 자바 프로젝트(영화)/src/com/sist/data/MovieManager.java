@@ -21,7 +21,7 @@ public class MovieManager {
 					vo.setMno(Integer.parseInt(st.nextToken()));
 					vo.setCno(Integer.parseInt(st.nextToken()));
 					vo.setTitle(st.nextToken());
-					vo.setPoster("https:"+st.nextToken());
+					vo.setPoster("http:"+st.nextToken());
 					String score=st.nextToken();
 					score=score.substring(score.indexOf("Á¡")+1);
 					vo.setScore(score.trim());

@@ -15,19 +15,19 @@ public class MusicalForm extends JPanel{
 		b1=new JButton("◀");
 		b2=new JButton("▶");
 		
-		p.setLayout(new GridLayout(2, 5, 8, 8));
+		p.setLayout(new GridLayout(2, 5, 6, 6));
 		
-		MusicalPrint(1);
+		musicalPrint(1);
 		
 		add("West",b1);
 		add("Center",p);
 		add("East",b2);
 				
 	}
-	// 페이지 => ClientMainFrame에서 Musicalprint로 호출
-	public void MusicalPrint(int page) {
+	// 페이지 => ClientMainFrame에서 musicalprint로 호출
+	public void musicalPrint(int page) {
 		MusicalManager m=new MusicalManager();
-		ArrayList<MusicalVO> list=m.MusicalListData(page); 
+		ArrayList<MusicalVO> list=m.musicalListData(page); 
 		int i=0;
 		for(MusicalVO vo:list) {
 			mc[i]=new MusicalCard(vo.getTitle(), vo.getPoster());
