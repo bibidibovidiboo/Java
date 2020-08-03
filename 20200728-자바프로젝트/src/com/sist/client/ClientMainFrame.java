@@ -32,17 +32,32 @@
  */	
 package com.sist.client;
 import javax.swing.*;
+
+import com.sist.common.Function;
+
 import java.awt.*; // Color , Layout
 import java.awt.event.*; // interface
-
-public class ClientMainFrame extends JFrame implements ActionListener,MouseListener {
+import java.io.*;
+import java.net.*;
+import java.util.*;
+/*
+ * 	1. 사용자가 서버에 요청
+ *  2. 서버에서 들어오는 응답을 받아서 출력 (쓰레드) => 자동화
+ *  
+ */
+public class ClientMainFrame extends JFrame implements ActionListener,MouseListener,Runnable {
 	JLabel title=new JLabel("영화 예매 & 추천 프로그램",JLabel.CENTER); // 가운데정렬
 	MenuForm mf=new MenuForm();
 	ChatForm cf=new ChatForm();
+	Login login=new Login();
 	ControlPanel cp;
 	// 멤버변수 => 프로그램 종료할 때 까지 안지워져서 여기서 선언
 	int curpage=1; // 첫페이지
 	int totalpage=16; // 마지막페이지
+	// 네트워크 관련 프로그램
+	Socket s; // 연결 기계
+	OutputStream out; // 서버로 요청값 전송 => 로그인,채팅문자열,종료...
+	BufferedReader in; // 서버로부터 값을 받아오는 클래스 ==> 쓰레드
 
 	//  윈도우 창 띄우기
 	public ClientMainFrame() {
@@ -66,8 +81,8 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		add(cp);
 		
 		setSize(1600,1000);
-		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE); // x버튼 누르면 종료
+		// setVisible(true); 로그인창 띄우려고 주석처리 
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); // x버튼 누르면 종료안되게
 		
 		mf.b1.addActionListener(this);
 		mf.b2.addActionListener(this);
@@ -88,8 +103,16 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		cp.lf.b6.addActionListener(this);
 		cp.lf.tf.addActionListener(this);
 		
+		// 로그인 처리
+		login.b1.addMouseListener(this);
+		login.b2.addMouseListener(this);
 		
+		// 종료
+		mf.b7.addActionListener(this);
 		
+		// 채팅
+		cf.tf.addActionListener(this);
+
 		/*
 		for(int i=0;i<10;i++) {
 			cp.ff.mc[i].addMouseListener(this);
@@ -178,7 +201,63 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			}
 			cp.lf.movieFindDate(ss);
 		}
-	}
+		
+		else if(e.getSource()==login.b1) {
+			String id=login.tf1.getText();
+			if(id.length()<1) { // id를 입력하지 않을 경우
+				JOptionPane.showMessageDialog(this, "아이디를 입력하세요");
+				login.tf1.requestFocus();
+				return;
+			}
+			String name=login.tf2.getText();
+			if(name.length()<1) {
+				JOptionPane.showMessageDialog(this, "대화명을 입력하세요");
+				login.tf2.requestFocus();
+				return;
+			}
+			String sex="";
+			if(login.rb1.isSelected()) 
+				sex="남자";
+			else
+				sex="여자";
+
+			// 서버로 입력받은 데이터 전송
+			try {
+				// 연결
+				s=new Socket("localhost",3355);
+				// 송수신 위치 확인
+				in=new BufferedReader(new InputStreamReader(s.getInputStream()));
+				out=s.getOutputStream();
+				
+				// 로그인 요청
+				out.write((Function.LOGIN+"|"+name+"|"+sex+"\n").getBytes());
+			}catch(Exception ex) {}
+			
+			// 서버에서 전송하는 데이터를 읽어서 출력
+			new Thread(this).start();
+			// run()의 위치 확인 ==> 자신의 클래스 안에 존재 => (this)
+			
+		}
+		else if(e.getSource()==login.b2) {
+			System.exit(0);
+		}
+		else if(e.getSource()==cf.tf) { // 채팅
+			String msg=cf.tf.getText();
+			if(msg.length()<1) 
+				return;
+			// 데이터를 서버로 전송
+				try {
+					out.write((msg+"\n").getBytes());
+				}catch (Exception ex) {}
+					cf.tf.setText("");
+				
+			}
+				else if(e.getSource()==mf.b7) {
+					try {
+						out.write((Function.EXIT+"|\n").getBytes());
+					}catch (Exception ex) {}
+				}
+		}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
@@ -221,5 +300,63 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		
 	}
 
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		// 서버에서 들어오는 데이터를 받아서 처리 
+		try {
+			while(true) {
+				String msg=in.readLine();
+				System.out.println("server=>"+msg);
+				StringTokenizer st=new StringTokenizer(msg,"|");
+				int protocol=Integer.parseInt(st.nextToken());
+				switch(protocol) {
+				case Function.MYLOG:
+				{
+					setTitle(st.nextToken());
+					login.setVisible(false); // 로그인창
+					setVisible(true); // 
+				}
+				break;
+				case Function.LOGIN:
+				{
+					// 테이블에 출력
+					String[] data= {
+							st.nextToken(), // id
+							st.nextToken(), // name
+							st.nextToken(), // sex
+							
+					};
+					cf.model.addRow(data);
+				}
+				break;
+				case Function.CHAT:
+				{
+					cf.ta.append(st.nextToken()+"\n");
+				}
+				break;
+				case Function.EXIT:
+				{
+					String id=st.nextToken();
+					for(int i=0;i<cf.model.getRowCount();i++) {
+						String mid=cf.model.getValueAt(i, 0).toString();
+						if(id.equals(mid)) {
+							cf.model.removeRow(i);
+							break;
+						}
+					}
+				}
+				break;
+				case Function.MYEXIT:
+				{
+					dispose(); // 윈도우 메모리 해제
+					System.exit(0); // 프로그램종료
+				}				
+				break;
+				}
+			}
+		}catch (Exception ex) {
+		}
+	}
 	
 }

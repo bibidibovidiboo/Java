@@ -50,7 +50,7 @@ public class DetailForm extends JPanel {
 		// setSize(900, 670); // JFrame 
 
 	}
-	public void datailPrint(int mno) {
+	public void detailPrint(int mno) {
 		MovieManager m=new MovieManager();
 		MovieVO vo=m.movieDetailDate(mno);
 		la1.setText(vo.getTitle()); // 타이틀출력
@@ -72,6 +72,10 @@ public class DetailForm extends JPanel {
 		la[5].setText("평점:"+vo.getScore());
 		la[6].setText("누적:"+vo.getShowUser());
 		ta.setText(vo.getStory());
+		
+	}
+	public void datailPrint(int a) {
+		// TODO Auto-generated method stub
 		
 	}
 }
