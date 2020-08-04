@@ -1,3 +1,4 @@
+// ¹ÂÁöÄÃ VO
 package com.sist.data;
 public class MusicalVO {
     private int mno; 

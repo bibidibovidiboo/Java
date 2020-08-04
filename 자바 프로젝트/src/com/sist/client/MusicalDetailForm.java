@@ -14,11 +14,11 @@ public class MusicalDetailForm extends JPanel {
 	public MusicalDetailForm() {
 		setLayout(null);
 		
-		poster.setBounds(90, 50, 400, 450);
+		poster.setBounds(110, 50, 400, 450);
 		add(poster);
 		
-		la1.setBounds(570, 50, 550, 45);
-		la1.setFont(new Font("¸¼Àº °íµñ",Font.PLAIN,33));
+		la1.setBounds(580, 55, 550, 45);
+		la1.setFont(new Font("¸¼Àº °íµñ",Font.PLAIN,30));
 		add(la1);
 		
 		JPanel p=new JPanel();
@@ -27,10 +27,10 @@ public class MusicalDetailForm extends JPanel {
 			String[] str= {
 					"Àå¼Ò","Ãâ¿¬","±â°£","°ü¶÷µî±Þ","°ø¿¬½Ã°£","ÁÖÃÖ"};
 			la[i]=new JLabel(str[i]);
-			la[i].setFont(new Font("¸¼Àº °íµñ",Font.PLAIN,22)); 
+			la[i].setFont(new Font("¸¼Àº °íµñ",Font.PLAIN,20)); 
 			p.add(la[i]);
 		}
-		p.setBounds(570, 120, 530, 290);
+		p.setBounds(580, 125, 530, 290);
 		add(p);
 		
 //		ta.setEditable(false);
@@ -40,7 +40,7 @@ public class MusicalDetailForm extends JPanel {
 		
 		b1=new JButton("¿¹¸ÅÇÏ±â");
 		b1.setBackground(Color.red);
-		b1.setBounds(570, 450, 120, 50);
+		b1.setBounds(580, 455, 110, 40);
 		add(b1);
 
 	}
