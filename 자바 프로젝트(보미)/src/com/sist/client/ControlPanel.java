@@ -5,9 +5,9 @@ import javax.swing.*;
 public class ControlPanel extends JPanel {
 	CardLayout card=new CardLayout();
 	MusicalDetailForm df=new MusicalDetailForm(); // 상세보기
-	BookListForm blf=new BookListForm(); // 도서
-	MangoListForm mlf=new MangoListForm(); // 맛집
-	MusicListForm clf=new MusicListForm(); // 음악
+	BookForm bf=new BookForm(); // 도서
+	FoodForm of=new FoodForm(); // 맛집
+	MusicForm sf=new MusicForm(); // 음악
 	NewsForm nf=new NewsForm(); // 뉴스
 	MusicalForm ff; // 홈화면
 	ClientMainFrame c; // 메인
@@ -18,10 +18,10 @@ public class ControlPanel extends JPanel {
 		setLayout(card);
 		
 		add("FF",ff); // 홈
-		add("DF",df); // 홈 상세
-		add("BLF",blf); // 도서
-		add("MLF",mlf); // 맛집
-		add("CLF",clf); // 음악	
+		add("DF",df); // 상세
+		add("BF",bf); // 도서
+		add("OF",of); // 맛집
+		add("SF",sf); // 음악	
 		add("NF",nf); // 뉴스
 
 	}

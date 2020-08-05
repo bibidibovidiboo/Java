@@ -9,14 +9,15 @@ public class MusicalDetailForm extends JPanel {
 	JLabel poster=new JLabel();
 	JLabel la1=new JLabel();
 	JLabel[] la=new JLabel[6];
+//	JTextPane ta=new JTextPane(); 
 	JButton b1;
 	public MusicalDetailForm() {
 		setLayout(null);
 		
-		poster.setBounds(100, 50, 400, 450);
+		poster.setBounds(110, 50, 400, 450);
 		add(poster);
 		
-		la1.setBounds(560, 55, 550, 45);
+		la1.setBounds(580, 55, 550, 45);
 		la1.setFont(new Font("맑은 고딕",Font.PLAIN,30));
 		add(la1);
 		
@@ -29,12 +30,17 @@ public class MusicalDetailForm extends JPanel {
 			la[i].setFont(new Font("맑은 고딕",Font.PLAIN,20)); 
 			p.add(la[i]);
 		}
-		p.setBounds(560, 125, 530, 290);
+		p.setBounds(580, 125, 530, 290);
 		add(p);
-
+		
+//		ta.setEditable(false);
+//		JScrollPane js=new JScrollPane(ta);
+//		js.setBounds(50, 410, 600, 100);
+//		add(js);
+		
 		b1=new JButton("예매하기");
 		b1.setBackground(Color.red);
-		b1.setBounds(560, 455, 100, 40);
+		b1.setBounds(580, 455, 110, 40);
 		add(b1);
 
 	}
@@ -57,6 +63,7 @@ public class MusicalDetailForm extends JPanel {
 		la[3].setText("관람등급 / "+vo.getGrade());
 		la[4].setText("공연시간 / "+vo.getTime());
 		la[5].setText("주최 / "+vo.getHost());
+//		ta.setText(vo.getStory());
 		
 	}
 }

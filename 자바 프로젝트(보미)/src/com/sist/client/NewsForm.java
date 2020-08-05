@@ -16,10 +16,11 @@ public class NewsForm extends JPanel implements ActionListener{
 	   setLayout(new BorderLayout());
 	   NewsManager m=new NewsManager();
 	   
+   	   //p.setLayout(null);
    	   JScrollPane pp=new JScrollPane();
-   	   Dimension size = new Dimension(); 
-   	   size.setSize(1000, 890); 
-   	   p.setPreferredSize(size); 
+   	   Dimension size = new Dimension(); //사이즈를 지정하기 위한 객체 생성
+   	   size.setSize(1000, 890); //객체의 사이즈를 지정
+   	   p.setPreferredSize(size); //사이즈 정보를 가지고 있는 객체를 이용해 패널의 사이즈 지정
    	   pp.setViewportView(p);
 	   ArrayList<NewsVO> news=m.newsListData(1);
 	   p.setLayout(new GridLayout(5, 1));

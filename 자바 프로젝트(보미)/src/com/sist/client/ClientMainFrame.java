@@ -19,7 +19,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 	ControlPanel cp; // 컨트롤패널
 	
 	int curpage=1; // 첫페이지
-	int totalpage=5; // 마지막페이지
+	int totalpage=9; // 마지막페이지
 	
 	// 네트워크
 	Socket s; // 연결 기계 
@@ -71,27 +71,7 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 		// 채팅
 		cf.tf.addActionListener(this);
 		
-		//도서
-		cp.blf.b1.addActionListener(this);
-		cp.blf.b2.addActionListener(this);
-		cp.blf.b3.addActionListener(this);
-		cp.blf.b4.addActionListener(this);
-		cp.blf.tf.addActionListener(this);
-				
-		//맛집
-		cp.mlf.b1.addActionListener(this);
-		cp.mlf.b2.addActionListener(this);
-		cp.mlf.b3.addActionListener(this);
-		cp.mlf.b4.addActionListener(this);
-		cp.mlf.b5.addActionListener(this);
-		cp.mlf.tf.addActionListener(this);
-				
-		//음악
-		cp.clf.b1.addActionListener(this);
-		cp.clf.b2.addActionListener(this);
-		cp.clf.b3.addActionListener(this);
-		cp.clf.b4.addActionListener(this);
-		cp.clf.tf.addActionListener(this);
+		
 
 	}
 
@@ -117,100 +97,18 @@ public class ClientMainFrame extends JFrame implements ActionListener,MouseListe
 			cp.card.show(cp, "FF");
 		}
 		else if(e.getSource()==mf.b2) {
-			cp.card.show(cp, "BLF");
+			cp.card.show(cp, "BF");
 		}
 		else if(e.getSource()==mf.b3) {
-			cp.card.show(cp, "MLF");
+			cp.card.show(cp, "OF");
 		}
 		else if(e.getSource()==mf.b4) {
-			cp.card.show(cp, "CLF");
+			cp.card.show(cp, "SF");
 		}
 		else if(e.getSource()==mf.b5) {
 			cp.card.show(cp, "NF");
 		}
 		
-		// 도서 메뉴클릭
-		else if(e.getSource()==cp.blf.b1)
-	    {
-			cp.blf.bookAllData(1);
-	    }
-	    else if(e.getSource()==cp.blf.b2)
-	    {
-	    	cp.blf.bookAllData(2);
-	    }
-	    else if(e.getSource()==cp.blf.b3)
-	    {
-	    	cp.blf.bookAllData(3);
-	    }
-	         
-	    else if(e.getSource()==cp.blf.b4 || e.getSource()==cp.blf.tf) 
-	    {
-	    	// 1 입력된 값 읽기
-	    	String ss=cp.blf.tf.getText();
-	        if(ss.length()<1) //입력된 검색어가 없을경우
-	        {
-	        	JOptionPane.showMessageDialog(this, "검색어를 입력하세요");
-	            cp.blf.tf.requestFocus();
-	            return; //메소드종료
-	        }
-	        cp.blf.BookFindData(ss);
-	    }
-			
-		//맛집 메뉴 클릭
-		else if(e.getSource()==cp.mlf.b1)
-		{
-			cp.mlf.mangoAllData(1);
-		}
-		else if(e.getSource()==cp.mlf.b2)
-		{
-			cp.mlf.mangoAllData(2);
-		}
-		else if(e.getSource()==cp.mlf.b3)
-		{
-			cp.mlf.mangoAllData(3);
-		}
-		else if(e.getSource()==cp.mlf.b4)
-		{
-			cp.mlf.mangoAllData(4);
-		}
-				
-		else if(e.getSource()==cp.mlf.b5 || e.getSource()==cp.mlf.tf) 
-		{		
-			String ss=cp.mlf.tf.getText();
-			if(ss.length()<1) 
-			{
-				JOptionPane.showMessageDialog(this, "검색어를 입력하세요");
-				cp.mlf.tf.requestFocus();
-				return;
-			}
-			cp.mlf.mangoFindData(ss);
-		}
-			
-		//음악클릭
-	    else if(e.getSource()==cp.clf.b1)
-	    {
-	    	cp.clf.musicAllData(1);
-	    }
-	    else if(e.getSource()==cp.clf.b2)
-	    {
-	    	cp.clf.musicAllData(2);
-	    }
-	    else if(e.getSource()==cp.clf.b3)
-	    {
-	        cp.clf.musicAllData(3);
-	    }  
-	    else if(e.getSource()==cp.clf.b4 || e.getSource()==cp.clf.tf) 
-	    {      
-	    	String ss=cp.clf.tf.getText();
-	        if(ss.length()<1) 
-	        {
-	        	JOptionPane.showMessageDialog(this, "검색어를 입력하세요");
-	            cp.clf.tf.requestFocus();
-	            return; 
-	        }
-	        cp.clf.musicFindData(ss);
-	    }
-	
 		// 홈 이전버튼
 		else if(e.getSource()==cp.ff.b1) {
 			

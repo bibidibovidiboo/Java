@@ -1,4 +1,3 @@
-// 뉴스카드
 package com.sist.client;
 import java.awt.*;
 import javax.swing.*;
@@ -23,6 +22,7 @@ public class NewsCard extends JPanel{
     	author.setBounds(320, 130, 900, 35);
     	add(author);
     }
+    // 값을 채운다
     public void newsPrint(NewsVO vo){
     	try
     	{
