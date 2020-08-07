@@ -23,7 +23,7 @@ public class MusicDetailForm extends JPanel {
 		  add(poster);
 		  la1.setBounds(265,15,400,45);
 
-		  la1.setFont(new Font("¸¼Àº °íµñ ", Font.BOLD,20));
+		  la1.setFont(new Font("¸¼Àº °íµñ", Font.BOLD,20));
 		  
 		  add(la1);
 		  JPanel p=new JPanel();
