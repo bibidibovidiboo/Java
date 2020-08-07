@@ -9,7 +9,7 @@ public class MusicManager {
    static {
       try {
         
-         FileInputStream fr = new FileInputStream("c:\\javaDev\\music.txt");
+         FileInputStream fr = new FileInputStream("c:\\javaDev\\five\\music.txt");
 
          BufferedReader in = new BufferedReader(new InputStreamReader(fr));
          while (true) {

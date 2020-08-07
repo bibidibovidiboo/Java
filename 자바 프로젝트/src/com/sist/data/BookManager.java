@@ -11,7 +11,7 @@ public class BookManager {
 	{
 		try
 		{
-			FileInputStream fr=new FileInputStream("c:\\javaDev\\book.txt");
+			FileInputStream fr=new FileInputStream("c:\\javaDev\\five\\book.txt");
 			//메모리에 전체 데이터 수집
 			BufferedReader in=new BufferedReader(new InputStreamReader(fr));
 			while(true)

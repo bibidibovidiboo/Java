@@ -8,7 +8,7 @@ public class MusicalManager {
 	static {
 		try {
 			// 저장된 파일 읽기
-			FileInputStream fr=new FileInputStream("c:\\javaDev\\musical.txt");
+			FileInputStream fr=new FileInputStream("c:\\javaDev\\five\\musical.txt");
 			// 메모리에 전체데이터를 모아서 관리
 			BufferedReader in=new BufferedReader(new InputStreamReader(fr));
 			while(true) {

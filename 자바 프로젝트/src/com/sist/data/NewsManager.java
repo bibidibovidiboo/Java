@@ -6,7 +6,7 @@ public class NewsManager {
 	// 프로그램 => 시작 => 데이터 읽어서 => Arraylist에 저장 
 	static {
 		try {
-			FileInputStream fis=new FileInputStream("c:\\javaDev\\daum_news.txt");
+			FileInputStream fis=new FileInputStream("c:\\javaDev\\five\\daum_news.txt");
 			BufferedReader in=new BufferedReader(new InputStreamReader(fis)); // \n 나올 때까지 읽어줌
 			while(true) {
 				String data=in.readLine();

@@ -9,7 +9,7 @@ public class MangoManager {
 	{
 		try
 		{
-			FileInputStream fr=new FileInputStream("c:\\javaDev\\mango.txt");
+			FileInputStream fr=new FileInputStream("c:\\javaDev\\five\\mango.txt");
 			// 메모리에 전체 데이터를 모아서 관리
 			BufferedReader in=new BufferedReader(new InputStreamReader(fr));
 			while(true)
