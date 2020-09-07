@@ -77,5 +77,4 @@ public class 자바변수값교환 {
 		System.out.println("x="+x);
 		System.out.println("y="+y);
 	}
-
 }
