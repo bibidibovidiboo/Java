@@ -61,9 +61,7 @@ public class BookManager {
 				}
 				j++; //for 돌아가는 횟수
 			}
-			return books;
-		
-		
+			return books;	
 		
 	}
 	public int BookTotalPage()
