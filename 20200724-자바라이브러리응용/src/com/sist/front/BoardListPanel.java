@@ -69,8 +69,7 @@ public class BoardListPanel extends JPanel{
     			 render.setHorizontalAlignment(JLabel.CENTER);
     		 }
     		 column.setCellRenderer(render);
-    	 }
-    	 
+    	 }  	 
 			/* 출력
 			 * String[] data={"1","ArrayList 연습중입니다","홍길동","2020-07-24","0"};
 			 * model.addRow(data);
