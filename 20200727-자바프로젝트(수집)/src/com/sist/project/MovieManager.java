@@ -106,8 +106,7 @@ public class MovieManager {
 		    	    	
 		    	    	mno++;
 		    	    			  
-	    	    	}catch(Exception ex) {}
-	    	    	
+	    	    	}catch(Exception ex) {}	    	    	
 	    	    }
 	    	}
       }catch(Exception ex) // actor가 없는 오류
