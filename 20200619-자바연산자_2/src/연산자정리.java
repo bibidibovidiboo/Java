@@ -8,7 +8,5 @@ public class 연산자정리 {
 		System.out.println(cc); 
 		
 		System.out.println(c>='A' && c<='Z' ? "대문자":"소문자");
-
 	}
-
 }
