@@ -45,7 +45,6 @@ public class 자바기본형데이터 {
 		System.out.println((int)'ㅋ');
 		// 126191261912619 ㅋㅋㅋ
 		System.out.println((char)12619);
-		// 각문자는 숫자번호를 가지고 있다 (char는 정수형으로 인식한다)
-		
+		// 각문자는 숫자번호를 가지고 있다 (char는 정수형으로 인식한다)		
 	}
 }
