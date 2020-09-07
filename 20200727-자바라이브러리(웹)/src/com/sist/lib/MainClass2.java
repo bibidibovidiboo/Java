@@ -59,8 +59,7 @@ public class MainClass2 {
 			String name=names.get(i);
 			// 원하는 위치에 저장된 데이터 읽기
 			
-			System.out.println(name+":"+i);
-			
+			System.out.println(name+":"+i);			
 		}
 		
 		System.out.println("================이순신 삭제");
