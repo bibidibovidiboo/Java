@@ -51,7 +51,7 @@ public class HomeTrainingManager {
 								System.out.println(link2.get(j).attr("src"));
 							}catch (Exception ex) {}
 						}
-		    	    	System.out.println("==============================================================================");
+		    	    	System.out.println("============================================");
 						
 					}catch (Exception ex) {}
 				}				
